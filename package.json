@@ -1,0 +1,27 @@
+{
+  "name": "MainFastify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run watch | npm run nodemon",
+    "nodemon": "nodemon server",
+    "watch": "babel src -d server -w",
+    "build": "babel src -d server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "fastify": "^2.3.0",
+    "path": "^0.12.7",
+    "serve-static": "^1.13.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4"
+  }
+}
