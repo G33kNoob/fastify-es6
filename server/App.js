@@ -33,7 +33,7 @@ function () {
       logger: true
     });
     this.router = new _Routes.Router();
-    this.pathToClient = '../client/';
+    this.pathToClient = '../client/dist/';
     this.config();
     this.router.routes(this.app);
   }

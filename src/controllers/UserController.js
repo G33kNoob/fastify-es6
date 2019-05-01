@@ -1,6 +1,6 @@
-export class HomeController {
+export class UserController {
 
-	index(req, reply) {
+    index(req, reply) {
 		reply.send([
 			{'name': 'Alex'},
 			{'name': 'Test 1'},
@@ -8,6 +8,6 @@ export class HomeController {
 			{'name': 'Test 3'},
 			{'name': 'Test 4'}
 		])
-	}
-
+    }
+    
 }

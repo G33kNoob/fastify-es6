@@ -1,17 +1,16 @@
-import { FastifyRequest, FastifyReply } from 'fastify'
-import { ServerResponse, IncomingMessage } from 'http'
-
-import { HomeController } from '../controllers'
+import { HomeController, UserController } from '../controllers'
 
 export class Router {
 
 	constructor() {
 		this.apiUrl = '/api/';
-    	this.homeController = new HomeController();
+		this.homeController = new HomeController();
+		this.userController = new UserController();
 	}
 
 	routes(app) {
         app.get(this.apiUrl, (req, reply) => this.homeController.index(req, reply));
+        app.get(this.apiUrl + 'users', (req, reply) => this.userController.index(req, reply));
     }
 
 }

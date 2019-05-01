@@ -3,9 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Router = void 0;
-
-var _controllers = require("../controllers");
+exports.UserController = void 0;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -13,32 +11,31 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Router =
+var UserController =
 /*#__PURE__*/
 function () {
-  function Router() {
-    _classCallCheck(this, Router);
-
-    this.apiUrl = '/api/';
-    this.homeController = new _controllers.HomeController();
-    this.userController = new _controllers.UserController();
+  function UserController() {
+    _classCallCheck(this, UserController);
   }
 
-  _createClass(Router, [{
-    key: "routes",
-    value: function routes(app) {
-      var _this = this;
-
-      app.get(this.apiUrl, function (req, reply) {
-        return _this.homeController.index(req, reply);
-      });
-      app.get(this.apiUrl + 'users', function (req, reply) {
-        return _this.userController.index(req, reply);
-      });
+  _createClass(UserController, [{
+    key: "index",
+    value: function index(req, reply) {
+      reply.send([{
+        'name': 'Alex'
+      }, {
+        'name': 'Test 1'
+      }, {
+        'name': 'Test 2'
+      }, {
+        'name': 'Test 3'
+      }, {
+        'name': 'Test 4'
+      }]);
     }
   }]);
 
-  return Router;
+  return UserController;
 }();
 
-exports.Router = Router;
+exports.UserController = UserController;

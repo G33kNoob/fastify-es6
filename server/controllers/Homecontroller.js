@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.HomeController = void 0;
 
-var _fastify = require("fastify");
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -23,9 +21,17 @@ function () {
   _createClass(HomeController, [{
     key: "index",
     value: function index(req, reply) {
-      reply.send({
+      reply.send([{
         'name': 'Alex'
-      });
+      }, {
+        'name': 'Test 1'
+      }, {
+        'name': 'Test 2'
+      }, {
+        'name': 'Test 3'
+      }, {
+        'name': 'Test 4'
+      }]);
     }
   }]);
 

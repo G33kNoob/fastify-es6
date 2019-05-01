@@ -10,7 +10,7 @@ class App {
 	constructor() {
         this.app = fastify({ logger: true });
         this.router = new Router();
-        this.pathToClient = '../client/';
+        this.pathToClient = '../client/dist/';
         this.config();
         this.router.routes(this.app);
     }
