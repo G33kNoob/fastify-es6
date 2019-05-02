@@ -10,6 +10,10 @@ export default {
         axios.get(state.apiUrl + 'users')
              .then(res => commit('SET_USERS', res.data))
              .catch(err => console.log(err))
+    },
+
+    ADD_USER({ commit }, user) {
+        commit('ADD_USER', user)
     }
 
 }
