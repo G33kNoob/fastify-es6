@@ -1,5 +1,5 @@
 export default {
-    GET_ALL_USERS: (state) => {
+    GET_USERS: (state) => {
         return state.users;
     }
 }

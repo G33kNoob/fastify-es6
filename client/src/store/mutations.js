@@ -4,7 +4,6 @@ export default {
     },
 
     SET_USERS(state, users) {
-        console.log(users)
         state.users = users
     },
 
