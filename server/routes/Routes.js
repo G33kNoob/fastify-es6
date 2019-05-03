@@ -38,6 +38,9 @@ function () {
       app.post(this.apiUrl + 'user', function (req, reply) {
         return _this.userController.addUser(req, reply);
       });
+      app.post(this.apiUrl + 'removeuser', function (req, reply) {
+        return _this.userController.removeUser(req, reply);
+      });
     }
   }]);
 

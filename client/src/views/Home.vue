@@ -11,6 +11,7 @@
       <li v-for="(user, index) in getUsers" :key="index">
         <strong>Name:</strong>{{ user.name }},
         <strong>Email: </strong>  {{ user.email }}
+        <button @click="removeUser(user._id)">x</button>
       </li>
     </ul>
 
@@ -38,6 +39,9 @@ export default {
       this.$store.dispatch('ADD_USER', {name: this.name, email: this.email})
       this.name = '';
       this.email = '';
+    },
+    removeUser(id) {
+      this.$store.dispatch('REMOVE_USER', id)
     }
   }
 };

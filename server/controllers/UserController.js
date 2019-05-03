@@ -40,6 +40,15 @@ function () {
         return console.log(err);
       });
     }
+  }, {
+    key: "removeUser",
+    value: function removeUser(req, reply) {
+      _User["default"].removeUser(req.body.id).then(function (res) {
+        return reply.send('Success');
+      })["catch"](function (err) {
+        return reply.send('Error');
+      });
+    }
   }]);
 
   return UserController;

@@ -76,6 +76,11 @@ function () {
       });
       return user.save();
     }
+  }, {
+    key: "removeUser",
+    value: function removeUser(_id) {
+      return this.user.findById(_id).remove();
+    }
   }]);
 
   return User;

@@ -11,11 +11,17 @@ export default {
              .then(res => commit('SET_USERS', res.data))
              .catch(err => console.log(err))
     },
-
     ADD_USER({ commit, state }, user) {
         axios.post(state.apiUrl + 'user', user)
              .then(res => commit('ADD_USER', res.data))
              .catch(err => console.log(err))
+    },
+    REMOVE_USER({ commit, state }, id) {
+        axios.post(state.apiUrl + 'removeuser', {id: id})
+             .then(res => commit('REMOVE_USER', id))
+             .catch(err => console.log(err))
+
+        //commit('REMOVE_USER', id)
     }
 
 }

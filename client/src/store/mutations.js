@@ -9,6 +9,11 @@ export default {
     ADD_USER(state, user) {
         state.users.push(user)
     },
+    REMOVE_USER(state, id) {
+        state.users = state.users.filter((user) => { 
+            return user._id !== id;  
+        });
+    },
 
     CLEAR_LOCAL_STORE() {
         localStorage.removeItem('token');

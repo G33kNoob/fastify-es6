@@ -37,6 +37,10 @@ class User {
         return user.save();
     }
 
+    removeUser(_id) {
+        return this.user.findById(_id).remove();
+    }
+
 }
 
 export default new User()

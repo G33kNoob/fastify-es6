@@ -13,5 +13,11 @@ export class UserController {
 			.then(res => reply.send(res))
 			.catch(err => console.log(err))
 	}
+
+	removeUser(req, reply) {
+		User.removeUser(req.body.id)
+				.then(res => reply.send('Success'))
+				.catch(err => reply.send('Error'))
+	}
     
 }
