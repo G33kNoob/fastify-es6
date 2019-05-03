@@ -40,6 +40,8 @@
       "parser": "babel-eslint"
     }
   },
+  "eslint-disable-next-line": true,
+  "eslint-disable": true,
   "postcss": {
     "plugins": {
       "autoprefixer": {}

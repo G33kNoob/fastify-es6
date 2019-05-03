@@ -12,8 +12,10 @@ export default {
              .catch(err => console.log(err))
     },
 
-    ADD_USER({ commit }, user) {
-        commit('ADD_USER', user)
+    ADD_USER({ commit, state }, user) {
+        axios.post(state.apiUrl + 'user', user)
+             .then(res => commit('ADD_USER', res.data))
+             .catch(err => console.log(err))
     }
 
 }

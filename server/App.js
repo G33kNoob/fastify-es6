@@ -13,7 +13,11 @@ var _path = _interopRequireDefault(require("path"));
 
 var _serveStatic = _interopRequireDefault(require("serve-static"));
 
+var db = _interopRequireWildcard(require("./config/db"));
+
 var _Routes = require("./routes/Routes");
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -41,7 +45,20 @@ function () {
   _createClass(App, [{
     key: "config",
     value: function config() {
-      this.app.use(_bodyParser["default"].json());
+      db.setConnection();
+      /*this.app.addContentTypeParser('application/json', { parseAs: 'string' }, function (req, body, done) {
+          try {
+              var json = JSON.parse(body)
+              done(null, json)
+          } catch (err) {
+              err.statusCode = 400
+              done(err, undefined)
+          }
+      })*/
+
+      /*this.app.use(bodyParser.urlencoded({ extended: true }))
+      this.app.use(bodyParser.json());*/
+
       this.app.use((0, _serveStatic["default"])(_path["default"].join(__dirname, this.pathToClient)));
     }
   }]);

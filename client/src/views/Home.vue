@@ -1,18 +1,28 @@
 <template>
-<div class="home">
-  <input type="text" v-model="name">
-  <button @click="setUser()">Add</button>
-	<ul>
-		<li v-for="(user, index) in getUsers" :key="index">{{ user.name }}</li>
-	</ul>
-</div>
+  <div>
+
+    <form @submit.prevent="addUser">
+      <input type="text" v-model="name" placeholder="Name">
+      <input type="email" v-model="email" placeholder="Email">
+      <button type="submit">Add</button>
+    </form>
+
+    <ul>
+      <li v-for="(user, index) in getUsers" :key="index">
+        <strong>Name:</strong>{{ user.name }},
+        <strong>Email: </strong>  {{ user.email }}
+      </li>
+    </ul>
+
+  </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      name: ''
+      name: '',
+      email: ''
     };
   },
   computed: {
@@ -24,8 +34,10 @@ export default {
     this.$store.dispatch('SET_USERS');
   },
   methods: {
-    setUser() {
-      this.$store.dispatch('ADD_USER', {name: this.name})
+    addUser() {
+      this.$store.dispatch('ADD_USER', {name: this.name, email: this.email})
+      this.name = '';
+      this.email = '';
     }
   }
 };

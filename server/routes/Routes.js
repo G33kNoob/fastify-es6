@@ -35,6 +35,9 @@ function () {
       app.get(this.apiUrl + 'users', function (req, reply) {
         return _this.userController.index(req, reply);
       });
+      app.post(this.apiUrl + 'user', function (req, reply) {
+        return _this.userController.addUser(req, reply);
+      });
     }
   }]);
 

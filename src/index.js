@@ -1,5 +1,4 @@
 import { serverPort } from './config/config.json';
-import fastify from 'fastify'
 import App from './App'
 
 App.listen(serverPort, (err, address) => {
